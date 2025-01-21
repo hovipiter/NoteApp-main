@@ -70,11 +70,6 @@ public class setting extends AppCompatActivity {
         manage_user.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
     }
 
-    public  void openLicense(View view){
-        Intent intent = new Intent(this, license.class);
-        startActivity(intent);
-        finish();
-    }
     public void btnBacktoMain_day(View view){
         Intent intent = new Intent(this, main.class);
         startActivity(intent);
