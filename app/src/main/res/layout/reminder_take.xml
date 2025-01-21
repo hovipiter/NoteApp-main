@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    style="@style/Screenbackground"
+    tools:context=".reminder_take">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ButtonRow">
+
+        <ImageButton
+            android:id="@+id/ImageButtonBack"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.0001"
+            style="@style/ImageButton_Back"
+            android:scaleType="fitXY"
+            android:backgroundTint="@color/darkpink"
+            android:onClick="returned"/>
+
+
+        <ImageButton
+            android:id="@+id/btnDeleteNote"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.0001"
+            style="@style/ImageButton_Delete"
+            android:backgroundTint="@color/darkpink"
+            android:scaleType="fitCenter"
+            android:onClick="delete"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ButtonRow">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/linear_take_note"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ButtonRow"
+                android:background="@color/backgroundlg"
+                style="@style/Screenbackground"
+                android:orientation="vertical">
+                <EditText
+                    android:id="@+id/edt_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="146dp"
+                    android:layout_marginVertical="20dp"
+                    android:gravity="top"
+                    android:hint="Nhập ở đây"
+                    android:minLines="15"
+                    android:padding="12dp"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:hint="1/1/2000"
+                    android:padding="12dp"
+                    android:textSize="20sp" />
+                <Button
+                    android:id="@+id/btnPickDate"
+                    style="@style/Button_PickDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="32dp"
+                    android:gravity="center"
+                    android:layout="@+id/time"
+                    android:text="Chọn ngày"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:hint="00:00"
+                    android:padding="20dp"
+                    android:textSize="20sp"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btnPickTime"
+                    style="@style/Button_PickTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Chọn giờ"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    style="@style/Button_Save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:onClick="save"
+                    android:text="Lưu nhắc nhở"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

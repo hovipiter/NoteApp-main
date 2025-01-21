@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="yellowpastel">#F2D479</color>
+    <color name="gray">#505050</color>
+    <color name="lightpink">#F1B4BB</color>
+    <color name="darkpink">#C65D7B</color>
+    <color name="lightorange">#FFD6A5</color>
+    <color name="darkorange">#E7AB79</color>
+    <color name="lightyellow">#FFE4D6</color>
+    <color name="darkyellow">#A27B5C</color>
+    <color name="lightgreen">#CBFFA9</color>
+    <color name="darkgreen">#03C988</color>
+    <color name="darkpurple">#331D2C</color>
+    <color name="lightpurple">#3F2E3E</color>
+    <color name="llpurple">#A78295</color>
+    <color name="llpink">#FFDFDF</color>
+    <color name="buttonBackground">#C66D7B</color>
+    <color name="buttonText">#FFFFFF</color>
+    <color name="backgroundlg">#51E4E1E1</color>
+    <color name="backgroundlogin">#85F6F3F3</color>
+
+    <color name="black2">#854D4A4E</color>
+
+</resources>

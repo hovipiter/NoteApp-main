@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/Screenbackground"
+    tools:context=".reminder_list">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    style="@style/BarBackground"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <ImageButton
+                    android:id="@+id/iBt_mode"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="13dp"
+                    android:contentDescription="@string/nightmode"
+                    android:scaleType="fitXY"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/iBtFindNote"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/ImageButton_Changemode" />
+
+                <ImageButton
+                    android:id="@+id/iBtFindNote"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="13dp"
+                    android:contentDescription="@string/note"
+                    android:scaleType="fitXY"
+                    app:layout_constraintLeft_toRightOf="@id/iBt_mode"
+                    app:layout_constraintRight_toLeftOf="@id/iBt_reminder"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/ImageButton_Note"
+                    android:onClick="main" />
+
+                <ImageButton
+                    android:id="@+id/iBt_reminder"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="13dp"
+                    android:contentDescription="@string/date"
+                    android:scaleType="fitXY"
+                    app:layout_constraintLeft_toRightOf="@id/iBtFindNote"
+                    app:layout_constraintRight_toLeftOf="@id/iBt_setting"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/ImageButton_Clock"
+                    android:onClick = "reminder"/>
+
+                <ImageButton
+                    android:id="@+id/iBt_setting"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="1dp"
+                    android:onClick="setting"
+                    android:contentDescription="@string/settings"
+                    android:scaleType="fitXY"
+                    app:layout_constraintLeft_toRightOf="@id/iBt_reminder"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/ImageButton_Setting" />
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_View"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="90dp"
+                    style="@style/SearchBackground"
+                    app:iconifiedByDefault="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.489"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/toolbar"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    app:queryHint="Search..." />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcv_remind"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:layout_editor_absoluteX="0dp"
+                            tools:listitem="@layout/reminder_item" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </ScrollView>
+                <ImageButton
+                    android:id="@+id/iBt_Add"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:contentDescription="@string/addnewnote"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    style="@style/ImageButton_AddNewNote"
+                    android:background="@drawable/round_button_background"
+                    android:onClick="new_reminder"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

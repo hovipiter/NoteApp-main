@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/Screenbackground"
+    tools:context=".font">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/darkpink"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/iBt_mode"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/darkpink"
+        android:contentDescription="@string/nightmode"
+        android:onClick="font_night"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/iBtFindNote"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dark"/>
+
+    <ImageButton
+        android:id="@+id/iBtFindNote"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/darkpink"
+        android:contentDescription="@string/note"
+        android:onClick="day_main"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toRightOf="@id/iBt_mode"
+        app:layout_constraintRight_toLeftOf="@id/iBt_settime"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/light_note" />
+
+    <ImageButton
+        android:id="@+id/iBt_settime"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/darkpink"
+        android:contentDescription="@string/date"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toRightOf="@id/iBtFindNote"
+        app:layout_constraintRight_toLeftOf="@id/iBt_setting"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/light_clock" />
+
+    <ImageButton
+        android:id="@+id/iBt_setting"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="1dp"
+        android:background="@color/darkpink"
+        android:contentDescription="@string/settings"
+        android:scaleType="fitXY"
+        android:onClick="setting_day"
+        app:layout_constraintLeft_toRightOf="@id/iBt_settime"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/light_setting" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="90dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <TextView
+                android:id="@+id/selectFontTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Chọn phông chữ"
+                android:textColor="@color/darkpink"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/fontRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <RadioButton
+                    android:id="@+id/radioOpen_sans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans"
+                    android:text="Open-sans"
+                    android:textColor="@color/darkpink"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioDancing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dancing"
+                    android:textColor="@color/darkpink"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/dancing_script_bold"/>
+
+                <RadioButton
+                    android:id="@+id/radioComfortaa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comfortaa"
+                    android:textColor="@color/darkpink"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/comfortaa"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/chooseSizeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chọn cỡ chữ"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/darkpink"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif"/>
+
+            <RadioGroup
+                android:id="@+id/textSizeRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp">
+
+                <RadioButton
+                    android:id="@+id/radioSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nhỏ"
+                    android:textColor="@color/darkpink"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif"/>
+
+                <RadioButton
+                    android:id="@+id/radioMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vừa"
+                    android:textSize="24sp"
+                    android:textColor="@color/darkpink"
+                    android:fontFamily="sans-serif"/>
+
+                <RadioButton
+                    android:id="@+id/radioBig"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lớn"
+                    android:textSize="30sp"
+                    android:textColor="@color/darkpink"
+                    android:fontFamily="sans-serif"/>
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

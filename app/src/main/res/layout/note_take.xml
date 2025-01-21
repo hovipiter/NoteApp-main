@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    style="@style/Screenbackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ButtonRow">
+
+        <ImageButton
+            android:id="@+id/ImageButtonBack"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.0001"
+            style="@style/ImageButton_Back"
+            android:scaleType="fitXY"
+            android:backgroundTint="@color/darkpink"/>
+        <ImageButton
+            android:id="@+id/ImageButtonSetting"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.0001"
+            android:layout_marginEnd="100dp"
+            style="@style/ImageButton_SetANote"
+            android:scaleType="fitXY"
+            android:backgroundTint="@color/darkpink"/>
+        <ImageButton
+            android:id="@+id/imgbtn_share"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="50dp"
+            android:layout_weight="0.0001"
+            style="@style/ImageButton_Share"
+            android:backgroundTint="@color/darkpink"
+            android:scaleType="fitCenter"/>
+
+        <ImageButton
+            android:id="@+id/btnDeleteNote"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.0001"
+            style="@style/ImageButton_Delete"
+            android:backgroundTint="@color/darkpink"
+            android:scaleType="fitCenter"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ButtonRow"
+        android:id="@+id/scrollView"
+        android:layout_marginBottom="120dp"
+        >
+        <LinearLayout
+            android:id="@+id/linear_take_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundlg"
+            style="@style/Screenbackground"
+            android:orientation="vertical"
+            >
+
+            <EditText
+                android:id="@+id/edt_note_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Chủ đề"
+                android:textAlignment="center"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/note_day"
+                    android:text="Ngày tháng năm"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/count_character_note"
+                    android:text="Số ký tự"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_note_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:gravity="top"
+                android:hint="Nhập ở đây"
+                android:minLines="15"
+                android:padding="12dp"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/iBt_Save"
+        android:gravity="center"
+        android:layout_marginBottom="5dp">
+        <CheckBox
+            android:id="@+id/cbFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm vào yêu thích"
+            android:textSize="20sp"
+            android:checked="false"
+            style="@style/Screenbackground"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/iBt_Save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="4dp"
+        style="@style/Button_Save"
+        android:gravity="center"
+        android:text="Lưu ghi chú"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
+</RelativeLayout>
