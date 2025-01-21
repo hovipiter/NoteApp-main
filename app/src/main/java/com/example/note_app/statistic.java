@@ -86,17 +86,6 @@ public class statistic extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-    public void reminder(View view){
-        if(user==null){
-            Toast.makeText(this, "Vui lòng đăng nhập để bắt đầu nhắc nhở", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, log_in.class));
-            finish();
-        }else {
-            Intent intent = new Intent(statistic.this, reminder_list.class);
-            startActivity(intent);
-            finish();
-        }
-    }
     public void setting(View view){
         Intent intent = new Intent(this, setting.class);
         startActivity(intent);

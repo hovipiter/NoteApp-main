@@ -123,14 +123,6 @@ public class note_take extends AppCompatActivity {
                 showDeleteConfirmationDialog();
             }
         });
-
-        // button setting -> popup menu
-        buttonSetting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showPopupMenu(v);
-            }
-        });
         // Thêm sự kiện nghe cho CheckBox
         cbFavorite.setOnCheckedChangeListener((buttonView, isChecked) -> {
             // Xử lý khi trạng thái của CheckBox thay đổi
@@ -290,29 +282,6 @@ public class note_take extends AppCompatActivity {
         buttonBack = (ImageButton) findViewById(R.id.ImageButtonBack);
         btnSaveNote = (Button) findViewById(R.id.iBt_Save);
         btnDelete = (ImageButton) findViewById(R.id.btnDeleteNote);
-    }
-
-    public void showPopupMenu(View v){
-        PopupMenu popup = new PopupMenu(this, v);
-        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                if(item.getItemId() == R.id.remind)
-                {
-                    showMessage("Bạn đã chọn nhắc nhở");
-                    Intent intent = new Intent(note_take.this, reminder_take.class);
-
-                    // Lấy title từ intent note_take
-                    String intentTitleNotetake = edtnotetitle.getText().toString();
-                    intent.putExtra("Title", intentTitleNotetake);
-                    intent.putExtra("source", "intent_note_take");
-                    startActivity(intent);
-                }
-                return true;
-            }
-        });
-        popup.inflate(R.menu.popup_menu);
-        popup.show();
     }
 
     private void showMessage(String message) {
