@@ -169,15 +169,4 @@ public class user_manager extends AppCompatActivity {
             editor.apply();
         }
     }
-    public void reminder(View view){
-        if(user==null){
-            Toast.makeText(this, "Vui lòng đăng nhập để bắt đầu nhắc nhở", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, log_in.class));
-            finish();
-        }else {
-            Intent intent = new Intent(user_manager.this, reminder_list.class);
-            startActivity(intent);
-            finish();
-        }
-    }
 }

@@ -59,29 +59,15 @@ public class setting extends AppCompatActivity {
             }
         }
 
-        Button thongke = findViewById(R.id.thongke);
         //Button dongbo = findViewById(R.id.dongbo);
         Button font = findViewById(R.id.font);
         Button manage_user = findViewById(R.id.manage_user);
-        Button phienban = findViewById(R.id.license_app);
-        phienban.setTypeface(typeface);
-        phienban.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
-        thongke.setTypeface(typeface);
-        thongke.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
         //dongbo.setTypeface(typeface);
         //dongbo.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
         font.setTypeface(typeface);
         font.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
         manage_user.setTypeface(typeface);
         manage_user.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
-
-        phienban.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLicense(v);
-                //font_day(v);
-            }
-        });
     }
 
     public  void openLicense(View view){
@@ -110,12 +96,6 @@ public class setting extends AppCompatActivity {
 
     public void font_day(View view){
         Intent intent = new Intent(this, font.class);
-        startActivity(intent);
-        finish();
-    }
-
-    public void statistic(View view){
-        Intent intent = new Intent(this, statistic.class);
         startActivity(intent);
         finish();
     }

@@ -66,8 +66,7 @@
                     app:layout_constraintLeft_toRightOf="@id/iBtFindNote"
                     app:layout_constraintRight_toLeftOf="@id/iBt_setting"
                     app:layout_constraintTop_toTopOf="parent"
-                    style="@style/ImageButton_Clock"
-                    android:onClick="reminder"/>
+                    style="@style/ImageButton_Clock" />
 
                 <ImageButton
                     android:id="@+id/iBt_setting"

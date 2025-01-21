@@ -29,9 +29,6 @@
         <activity android:name=".user_manager" />
         <activity android:name=".font" />
         <activity android:name=".changePassword" />
-        <activity android:name=".reminder_list" />
-        <activity android:name=".reminder_take" />
-        <activity android:name=".statistic" />
         <activity android:name=".license"/>
 
         <receiver android:name=".AlarmReceiver" />
